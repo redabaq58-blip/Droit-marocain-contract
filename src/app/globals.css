@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-green: #1B4332;
+  --brand-light: #2D6A4F;
+  --brand-gold: #B8860B;
+  --brand-bg: #F0F7F3;
+}
+
+body {
+  background-color: #FAFAF9;
+  color: #1a1a1a;
+}
+
+/* Arabic text direction */
+.arabic {
+  font-family: 'Noto Naskh Arabic', 'Arial', serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Moroccan flag accent */
+.star-accent::before {
+  content: '★';
+  color: var(--brand-gold);
+  margin-right: 0.5rem;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-light transition-colors duration-200;
+  }
+  .card {
+    @apply bg-white border border-gray-200 rounded-xl shadow-sm p-6;
+  }
+  .badge-high {
+    @apply bg-red-100 text-red-700 text-xs font-semibold px-2 py-1 rounded-full;
+  }
+  .badge-medium {
+    @apply bg-yellow-100 text-yellow-700 text-xs font-semibold px-2 py-1 rounded-full;
+  }
+  .badge-low {
+    @apply bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full;
+  }
+}
